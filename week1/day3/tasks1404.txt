@@ -1,0 +1,13 @@
+task1
+    print number as hexadecimal without using %x and % operator
+        example: 
+            0   -> 0x0
+            12  -> 0xC
+            255 -> 0xFF
+
+task2
+    create function <rotate> that swaps the first and the last bit, the first+1 and the last-1 bit, and so on
+    so that it creates the mirror image of the binary representation of the input number
+        example:
+            rotate(11) == 13
+            1011 -> 1101

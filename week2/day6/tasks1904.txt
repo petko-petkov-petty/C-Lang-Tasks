@@ -1,0 +1,33 @@
+/*
+# Task1
+
+Implement function **int 10perc_search(int* arr, int len, int x)** such that
+no more than log10(len) + some constant  of the elements of arr are looked up.
+
+# Task2
+
+Implement D-aray search. **int daray_search(unsinged int d, int* arr, int len, int x)**.
+
+# Task3
+
+Implement fuction **int max_search(int* arr, int len, int x, int max)** such that no more than subarray (subseq) with length max is checked.
+
+It will be alywas true that **len/(max - 1) >= log2(len)**.
+*/
+
+int bin_search(int* arr, int len, int search_for) {
+    int left = 0;
+    int right = len - 1;
+    while(left <= right) {
+        unsigned int mid = left + (right - left) / 2;
+        if(arr[mid] == search_for) {
+            return mid;
+        }
+        if(arr[mid] < search_for) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return -1;
+}
