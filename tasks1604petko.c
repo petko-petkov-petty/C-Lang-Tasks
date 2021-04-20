@@ -20,7 +20,7 @@ int isInCluster(uint16_t leaderID, uint8_t x, uint16_t id)
 int isFollower(uint16_t leaderID, uint8_t x, uint16_t id)
 {
     if (isInCluster(leaderID, x, id))
-        return (((id << x) != (leaderID << x)) && (id != getBroadcastId(leaderID, x)));
+        return ((id != leaderID) && (id != getBroadcastId(leaderID, x)));
     else
         return 0;
 }
