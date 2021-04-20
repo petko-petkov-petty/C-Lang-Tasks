@@ -1,0 +1,33 @@
+# Task 1
+
+Let u be a pointer to uint32_t somewhere in memory of size len times uint32_t, ergo, *u has 32 bits,
+ 0-31. Implement functions which manipulate the individual bits behind the u pointer. 
+ We expect to see I.c and I.h as follows
+	int setbit0(uint32_t *u, size_t len, size_t N);
+	//n - postittion 35 v purvo 
+	int setbit1(uint32_t *u, size_t len, size_t N);
+	int setbit(uint32_t *u, size_t len, size_t N, int value);
+	int getbit(uint32_t *u, size_t len, size_t N);
+The return values of the setters may reflect whether N is in the range, -1 being out of range,
+ 0 in range. 
+The getter function may return -1 if N is out of range, or 0 / 1, reflecting the value of the Nth bit.
+The sequence is like this
+0-31|32-63|64-...
+
+# Task 2
+
+Using the code from problem I implement the Eratosthenes sieve (7th grade, if you don't know it,
+ I can help you with a very fast acting cure), we want II.c and II.h, function
+	void eratosthenes(uint32_t *u, size_t len);
+
+# Task 3
+
+Set every odd bit behing uint32_t *u to 1, even bits to 0, we want III.c and III.h, function
+	void setodd(uint32_t *u, size_t len);
+
+# Task 4
+
+Let there be a pointer uint32_t *u to words memory, size_t len 32bit words. Write a function (IV.c + IV.h)
+	void setter(uint32_t *u, size_t len);
+which produces a pattern as follows:
+0101101110111101111101111110...
